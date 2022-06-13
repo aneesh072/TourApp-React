@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-function Tour({ id, image, info, price, name }) {
+function Tour({ id, image, info, price, name, removeTour }) {
   const [readMore, setReadMore] = useState(false);
   return (
     <article className="single-tour">
@@ -17,7 +17,10 @@ function Tour({ id, image, info, price, name }) {
             {readMore ? 'Show less' : 'Read More'}
           </button>
         </p>
-        <button className="delete-btn"> Not Interested</button>
+        <button className="delete-btn" onClick={() => removeTour(id)}>
+          {' '}
+          Not Interested
+        </button>
       </footer>
     </article>
   );
